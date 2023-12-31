@@ -1,0 +1,42 @@
+---
+title: Shubhank Dwivedi - Lab
+description: Welcome to my lab. This is a space for digital experimentation and tinkering, where I post about random fun side-projects and oddities that I work on. Watch this space!
+headertext: Making and breaking stuff!
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "head.html" %} {% include "lablinkstyle" %}
+  </head>
+
+  <body id="lab">
+    {% include "header.html" %}
+
+    <main>
+      <div class="intro-svg">
+        <img src="assets/images/lab.svg" alt="" />
+      </div>
+      <section class="page-intro">
+        <p>
+          Welcome to my lab. This is a space for digital experimentation and
+          tinkering, where I post about random fun side-projects and oddities
+          that I work on. Watch this space!
+        </p>
+      </section>
+      <section class="page-content">
+        {% for labitem in collections.lab reversed %}
+        <div class="lab-item">
+          <a href="{{ labitem.url | url | removeHTML }}">
+            <h2 class="title">{{ labitem.data.title }}</h2>
+          </a>
+          <p>{{ labitem.data.subtitle }}</p>
+        </div>
+        {% endfor %}
+      </section>
+      {% include "footer.html" %}
+    </main>
+
+    {% include "contact.html" %} {% include "script.html" %}
+  </body>
+</html>

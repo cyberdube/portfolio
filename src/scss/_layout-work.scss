@@ -1,0 +1,314 @@
+#work-page .header-name,
+#lab-page .header-name {
+  display: none;
+}
+
+.work > picture {
+  display: contents;
+}
+
+.work .cover {
+  margin: 0 -1em;
+  object-fit: cover;
+  height: 20em;
+  width: calc(100% + 2em);
+  grid-column: 1 / -1;
+}
+
+.work > .heading {
+  font-size: 2em;
+  margin-top: 2em;
+}
+
+.work > .subheading {
+  font-size: 1.5em;
+  margin-bottom: 2em;
+}
+
+.work > .larger {
+  font-size: 1.3em;
+  line-height: 1.45em;
+  margin-top: 1em;
+  margin-bottom: 1.5em;
+}
+
+.work > .intro {
+  margin-bottom: 2em;
+  margin-top: 0;
+}
+
+.work > .info {
+  margin-bottom: 2em;
+}
+
+.work > .info > h6:first-child {
+  margin-top: 0;
+}
+
+.work > .info > p,
+.work > .info > ul {
+  font-size: 1em;
+}
+
+.work > .info > ul {
+  margin: 0 0 0.25em 0;
+  padding: 0;
+  list-style: none;
+}
+
+.work > details {
+  font-size: 0.8em;
+}
+
+.work > details summary {
+  cursor: pointer;
+  margin-bottom: 0.5em;
+}
+
+.work > details summary > * {
+  display: inline;
+}
+
+.work > figure {
+  display: contents;
+}
+
+.work > figure > * {
+  width: 100%;
+  grid-column: 1 / -1;
+}
+
+.work figure img {
+  width: 100%;
+  height: auto;
+}
+
+.work figure figcaption {
+  font-style: italic;
+  margin-top: 1em;
+}
+
+.work > figure > :last-child {
+  margin-bottom: 2em;
+}
+
+.work > figure > :first-child {
+  margin-top: 1.5em;
+}
+
+.work > figure.wide img {
+  grid-column: 1 / -1;
+  margin-left: -1em;
+  margin-right: -1em;
+  width: calc(100% + 2em);
+}
+
+.work > figure.contained img {
+  border-radius: $work-page-border-radius;
+}
+
+.work > figure.shrink img {
+  max-width: 30em;
+  justify-self: center;
+}
+.work > figure.shrink figcaption {
+  text-align: center;
+}
+
+.work > .small-figure-text,
+.work > .large-figure-text {
+  margin-bottom: 2em;
+}
+
+.work > .small-figure-text h4,
+.work > .large-figure-text h4 {
+  margin-bottom: 0.75em;
+  margin-top: 1.5em;
+}
+
+.work > .small-figure-text figure,
+.work > .large-figure-text figure,
+.work > .contained-figure-text figure {
+  margin: 0;
+}
+
+.work > .contained-figure-text figure,
+.work > .contained-figure-text .group {
+  margin-top: 1.5em;
+  font-size: 0.9em;
+}
+
+.work > .small-figure-text .group,
+.work > .large-figure-text .group {
+  margin-bottom: 2em;
+}
+
+.work > .small-figure-text video,
+.work > .large-figure-text video,
+.work > .contained-figure-text video {
+  width: 100%;
+}
+
+.work > .slider {
+  display: flex;
+  overflow-x: scroll;
+  cursor: grab;
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+.work > .slider > figure {
+  display: contents;
+}
+
+.work > .slider > figure img {
+  width: 80vw;
+  border-radius: $work-page-border-radius;
+}
+
+.work > .slider > figure:not(:last-child) img {
+  margin-right: 1em;
+}
+
+.work figure video,
+lite-youtube {
+  border-radius: $work-page-border-radius;
+}
+
+.work > .footnotes {
+  font-size: 0.75em;
+}
+
+.work .footnotes-list {
+  padding-left: 1em;
+}
+
+.work > :not(pre) > code[class*="language-"] {
+  font-size: 0.9em;
+}
+
+.work > pre[class*="language-"] {
+  margin-top: 1.5em;
+  margin-bottom: 2em;
+  border-radius: $work-page-border-radius;
+}
+
+.work > .date {
+  padding-bottom: 2em;
+}
+
+.work > .tip {
+  background: rgba(221, 172, 70, 0.13);
+  border-radius: $work-page-border-radius;
+  padding: 1em 1em 0.5em 1em;
+  margin-bottom: 2em;
+}
+
+@media (min-width: 40em) {
+  .work > figure > * {
+    grid-column: 2/12;
+  }
+  .work > figure.wide img {
+    border-radius: $work-page-border-radius;
+  }
+  .work > .cover {
+    height: 30em;
+  }
+  .work p,
+  .work ul {
+    font-size: 1.15em;
+    line-height: 1.45;
+  }
+}
+
+@media (min-width: 60em) {
+  #work-page .header-name,
+  #lab-page .header-name {
+    display: unset;
+  }
+  .work > figure > * {
+    grid-column: 4 / 12;
+  }
+  .work > figure.wide img {
+    grid-column: 4 / 12;
+  }
+  .work .cover {
+    grid-column: 4 / 12;
+    border-radius: 0 0 $work-page-border-radius $work-page-border-radius;
+  }
+  .work > .small-figure-text {
+    display: contents;
+  }
+  .work > .small-figure-text > figure {
+    grid-column: 4 / 9;
+    margin-bottom: 2em;
+    padding-right: 2em;
+  }
+  .work > .small-figure-text > .group {
+    grid-column: 9 / 12;
+    padding-right: 2em;
+  }
+  .work > .slider > figure img {
+    width: 50vw;
+  }
+  .work > .slider > figure:not(:last-child) img {
+    margin-right: 1.5em;
+  }
+}
+
+@media (min-width: 80em) {
+  .work > .intro {
+    grid-column: 4 / 9;
+  }
+  .work > .info {
+    grid-column: 10 / 12;
+  }
+  .work > .small-figure-text {
+    display: unset;
+    grid-column: 4 / 8;
+  }
+  .work > .small-figure-text:nth-of-type(odd) {
+    grid-column: 8 / 12;
+  }
+  .work > .small-figure-text > figure {
+    margin-bottom: 0;
+  }
+  .work > .small-figure-text .group {
+    margin-bottom: 0;
+  }
+  .work > .large-figure-text,
+  .work > .contained-figure-text {
+    display: contents;
+  }
+  .work > .large-figure-text > figure {
+    grid-column: 4 / 9;
+    padding-right: 2em;
+    margin-bottom: 2em;
+  }
+  .work > .contained-figure-text > figure {
+    grid-column: 4 / 8;
+    padding-right: 2em;
+    margin-bottom: 2em;
+  }
+  .work > .contained-figure-text > .group {
+    grid-column: 8 / 10;
+  }
+  .work > .large-figure-text > .group {
+    grid-column: 9 / 12;
+  }
+  .work > .slider {
+    grid-column: 4 / 12;
+  }
+  .work > figure.contained * {
+    grid-column: 4 / 10;
+  }
+  .work > pre[class*="language-"] {
+    grid-column: 4 / 12;
+  }
+}
+
+@media (min-width: 100em) {
+  .work > pre[class*="language-"] {
+    grid-column: 4 / 10;
+  }
+}

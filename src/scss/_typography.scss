@@ -1,0 +1,85 @@
+@import "colors";
+
+body {
+  font-family: "Basic Sans Narrow", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Stilu", sans-serif;
+  margin: 1em 0 0.25em 0;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0.75em;
+  font-size: 1.1em;
+  line-height: 1.4;
+}
+
+ul {
+  font-size: 1.1em;
+  line-height: 1.4;
+  padding-left: 1em;
+  margin-top: 0;
+}
+
+a {
+  color: inherit;
+}
+
+nav a {
+  text-decoration: none;
+  transition: color 0.3s;
+  opacity: $nav-link-inactive-opacity;
+}
+
+nav a:hover {
+  opacity: $nav-link-hover-opacity;
+}
+
+address a:hover,
+.lab-item a:hover,
+p a:hover,
+span a:hover {
+  opacity: 0.6;
+}
+
+// highlight current page in nav menu
+#work nav .work-link,
+#work-page nav .work-link,
+#about nav .about-link,
+#lab nav .lab-link,
+#lab-page nav .lab-link {
+  font-weight: bold;
+  opacity: 1;
+}
+
+.work-card-text a {
+  text-decoration: none;
+}
+
+.lab-item a {
+  text-decoration-thickness: 0.2em;
+  text-decoration-skip-ink: none;
+}
+
+.work strong {
+  color: $secondary-text-color-light;
+  font-weight: bold;
+}
+
+.page-intro a {
+  text-decoration-style: dotted;
+}
+
+@media (prefers-color-scheme: dark) {
+  .work strong {
+    color: $secondary-text-color-dark;
+    font-weight: normal;
+  }
+}

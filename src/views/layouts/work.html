@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "head.html" %} {% include "postcolor" %}
+  </head>
+
+  <body id="work-page">
+    {% include "header.html" %}
+    <main>
+      <article class="page-content work">
+        {% if cover and cover.video %}
+        <video autoplay muted loop class="cover">
+          <source type="video/mp4" src="{{ cover.video }}" />
+          Your browser does not support playing HTML5 video. You can
+          <a href="{{ cover.video }}" download=""
+            >download a copy of the video file</a
+          >
+          instead. Here is a description of the content: alt text firefly video
+        </video>
+        {% elsif cover %}
+        <img class="cover" src="{{ cover.src }}" alt="{{ cover.alt }}" />
+        {% endif %}
+        <h1 class="heading">{{ title }}</h1>
+        <div class="subheading">{{ subtitle }}</div>
+        {{ content }}
+      </article>
+      {% include "footer.html" %}
+    </main>
+    {% include "contact.html" %} {% include "script.html" %}
+  </body>
+</html>

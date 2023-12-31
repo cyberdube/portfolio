@@ -1,0 +1,41 @@
+<header class="sidebar secondary-column">
+  <div class="nav-group secondary-column">
+    <div class="mii">
+      <div class="mii-slot"></div>
+      <div id="container">
+        <div id="dragMe">
+          <div class="drawables">
+            <div class="eye">
+              <div class="eyeball"></div>
+            </div>
+            <div class="eye">
+              <div class="eyeball"></div>
+            </div>
+          </div>
+        </div>
+        <div class="tooltip-container">
+          <div class="tooltip">
+            <div class="tooltip-text"></div>
+            <div id="arrow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <nav>
+      <a class="work-link" href="{{ '/' | url }}">Work</a>
+      <a class="about-link" href="{{ '/about' | url }}">About</a>
+      <a class="lab-link" href="{{ '/lab' | url }}">Lab</a>
+    </nav>
+     
+  </div>
+
+  <div class="header-name secondary-column" chat="Yup, that's me!">
+    <h2>Savio Menifer</h2>
+    {% if headertext %}
+    <span> {{ headertext }} </span>
+    {% else %}
+    <span> Creating future experiences </span>
+    {% endif %}
+  </div>
+</header>

@@ -1,0 +1,62 @@
+---
+title: Savio Menifer - Interaction Designer
+description: Interaction designer in social VR and shared virtual experiences - Portfolio
+cover:
+  src: assets/work/fireflyisland/thumb.jpg
+  alt: Two people with animal-like avatars sitting at the end of a dock on a social VR world.
+permalink: index.html
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "head.html" %} {% include "cardstyle" %}
+  </head>
+
+  <body id="work">
+    {% include "header.html" %}
+
+    <main>
+      <div class="intro-svg">
+        <img
+          src="assets/images/home.svg"
+          alt=""
+          chat="What are these flowers doing here anyway? Well you see, this is my little internet garden 😜"
+        />
+      </div>
+      <section class="page-intro">
+        <p>
+          Hi, I’m Savio. I create XR experiences that are social and playful by
+          design. I love to ideate and prototype spatial interactions that push
+          the boundaries of XR interfaces. I’m currently partnering with
+          <a href="https://www.terrificminds.com/" target="_blank"
+            >Terrific Minds</a
+          >
+          to create XR experiences for e-commerce and more.
+        </p>
+      </section>
+      <section class="page-content">
+        <h2 class="work-list-heading">Work</h2>
+        {% for work in collections.work reversed %}
+        <div class="work-card">
+          <a href="{{ work.url | url | removeHTML }}">
+            <img
+              src="{{ work.data.cover.src }}"
+              alt="{{ work.data.cover.alt }}"
+            />
+          </a>
+          <div class="work-card-text">
+            <a href="{{ work.url | url | removeHTML |}}">
+              <h2 class="title">{{ work.data.title }}</h2>
+            </a>
+            <p>{{ work.data.subtitle }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </section>
+      {% include "footer.html" %}
+    </main>
+
+    {% include "contact.html" %} {% include "script.html" %}
+  </body>
+</html>

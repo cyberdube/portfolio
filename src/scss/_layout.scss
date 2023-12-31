@@ -1,0 +1,301 @@
+@import "variables";
+
+body {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto calc(5 / 12 * (100vw - 2em)) auto auto;
+  margin: 0;
+  padding: 0 1em;
+  overflow-x: hidden;
+}
+
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-column: 1 / -1;
+  grid-row: 2 / 4;
+}
+
+.page-content {
+  display: contents;
+}
+
+.secondary-column,
+.page-content > * {
+  grid-column: 1 / -1;
+}
+
+.page-intro {
+  grid-column: span 11;
+}
+
+.page-intro p {
+  margin-top: 0;
+}
+
+.nav-group {
+  display: flex;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+header {
+  display: contents;
+}
+
+.mii {
+  margin-right: 1em;
+  font-size: 0.9em;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-right: 1em;
+}
+
+.mii-slot {
+  float: left;
+}
+
+footer > span {
+  margin-top: 4em;
+  margin-bottom: 2em;
+}
+
+address {
+  margin-bottom: 2em;
+}
+
+.header-name {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  margin-bottom: 1em;
+  align-self: end;
+}
+
+.header-name h2 {
+  margin: 0;
+}
+
+.work-list-heading {
+  margin-bottom: 1em;
+}
+
+.work-card {
+  margin: 0 -1em;
+  padding: 0em 1em;
+  position: relative;
+  overflow: hidden;
+}
+
+.work-card:not(:last-child) {
+  margin-bottom: 2em;
+}
+
+.work-card-text {
+  margin-top: 1em;
+}
+
+.work-card-text .title {
+  margin-top: 0;
+}
+
+.work-card img {
+  object-fit: cover;
+  width: 100%;
+  height: calc(100vw - 8em);
+  border-radius: 0.5em;
+}
+
+.intro-svg {
+  grid-column: 8 / 13;
+  position: relative;
+  transform: translateY(-2em);
+}
+
+.intro-svg img {
+  float: right;
+  max-height: 15em;
+}
+
+.about-photo {
+  clip-path: circle();
+  position: absolute;
+  right: 0;
+  transform: scale(0.75);
+  max-width: 100%;
+}
+
+.about-tile {
+  margin: 0 -1em 1em -1em;
+  padding: 0em 1em 0 1em;
+}
+.about-heading {
+  margin-bottom: 1em;
+}
+address {
+  font-size: 1.1em;
+}
+address > *:not(:last-child) {
+  margin-right: 0.3em;
+}
+
+@media (min-width: 40em) {
+  body {
+    grid-template-rows: auto min(15em, calc(4 / 12 * (100vw - 2em))) auto auto;
+  }
+  .secondary-column,
+  .page-content > * {
+    grid-column: 2/12;
+  }
+  .intro-svg {
+    grid-column: 8 / 12;
+  }
+  .page-intro {
+    grid-column: 2 / 9;
+  }
+  .work-card {
+    height: 25em;
+    border-radius: 1em;
+  }
+  .work-card-text {
+    position: absolute;
+    left: 1em;
+    top: 1em;
+    width: 50%;
+    z-index: 0;
+  }
+  .work-card-text::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    filter: blur(2em);
+  }
+  .work-card img {
+    margin: 0 -1em;
+    height: 100%;
+    width: calc(100% + 2em);
+  }
+  .about-tile {
+    border-radius: 0.75em;
+  }
+}
+
+@media (min-width: 60em) {
+  body {
+    grid-template-rows: auto auto auto;
+    padding: 0;
+  }
+  main {
+    grid-row: 1 / -1;
+  }
+  .page-content > * {
+    grid-column: 4 / 12;
+    z-index: 1;
+  }
+  .secondary-column {
+    grid-column: 1 / 4;
+    z-index: 2;
+  }
+  .sidebar {
+    margin-left: 2em;
+    position: sticky;
+    padding-right: 2em;
+  }
+  header {
+    display: flex;
+    flex-direction: column;
+    grid-row: 1;
+    top: 2em;
+  }
+  .nav-group {
+    display: contents;
+    margin-top: 0;
+  }
+  nav {
+    flex-direction: column;
+    align-items: start;
+    order: 3;
+  }
+  nav a {
+    margin-bottom: 0.5em;
+  }
+  .mii {
+    margin-bottom: 2em;
+    order: 1;
+    font-size: unset;
+  }
+  .header-name {
+    grid-row: 1;
+    margin-bottom: 2em;
+    align-self: start;
+    order: 2;
+  }
+  .intro-svg {
+    grid-column: 9 / 12;
+    grid-row: 1 / 4;
+    margin-top: 2em;
+    transform: unset;
+  }
+  .page-intro {
+    grid-column: 4 / 9;
+    margin-top: 7em;
+  }
+  .about-tile {
+    grid-column: 4 / 8;
+    margin: 0 1em 1em -1em;
+    padding: 0em 2em 0 1em;
+  }
+  .about-tile:nth-of-type(even) {
+    grid-column: 8 / 12;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .about-tile p {
+    margin-bottom: 1em;
+  }
+  .work-card-text {
+    width: 40%;
+  }
+  address {
+    bottom: 2em;
+    grid-row: 3;
+    font-size: unset;
+  }
+  address .email {
+    display: block;
+    margin-bottom: 0.5em;
+  }
+}
+
+@media (min-width: 80em) {
+  .page-content > * {
+    grid-column: 4 / 10;
+  }
+  .intro-svg {
+    grid-column: 8 / 10;
+    grid-row: 1 / 4;
+  }
+  .page-intro {
+    grid-column: 4 / 8;
+  }
+  .about-tile {
+    grid-column: 4 / 7;
+  }
+  .about-tile:nth-of-type(even) {
+    grid-column: 7 / 10;
+  }
+}
+
+@media (min-width: 100rem) {
+  .page-content {
+    grid-column: 4/9;
+  }
+}
